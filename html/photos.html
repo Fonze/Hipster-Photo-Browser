@@ -1,0 +1,84 @@
+<div id="photoDetail" ng-if="watchPhoto == true">
+	<div class="container">
+		<button class="closeButton buttonText" ng-click="closeWatch()">
+			Close <span class="glyphicon glyphicon-remove"></span>
+		</button>
+		<div class="row detailRow">
+			<div class="col-sm-6">
+				<div class="polaroid">
+					<div class="photoArea">
+						<img class="photoImg" ng-src="{{ watching.url }}" />
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 detailText">
+				<h2 class="text">Title</h2>
+				<p class="text">{{ watching.title }}</p>
+				<br />
+				<p class="text">by {{ user.username }}</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div ng-class="browseArea">
+	<button class="backButton buttonText" ng-click="back()"><span class="glyphicon glyphicon-chevron-left"></span> Back</button>
+	<div class="header textArea">
+		<h1 class="text">Album {{album.title}}</h1>
+		<h3 class="text">by {{user.username}}</h3>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4" ng-repeat="photo in album.photos" ng-if="$index >= min && $index < max - 9">
+				<div class="polaroid" ng-click="watchThis(photo)">
+					<div class="photoArea">
+						<img class="photoImg" ng-src="{{ photo.thumbnailUrl }}" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-4" ng-repeat="photo in album.photos" ng-if="$index >= min + 3 && $index < max - 6">
+				<div class="polaroid" ng-click="watchThis(photo)">
+					<div class="photoArea">
+						<img class="photoImg" ng-src="{{ photo.thumbnailUrl }}" />
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-4" ng-repeat="photo in album.photos" ng-if="$index >= min + 6 && $index < max - 3">
+				<div class="polaroid" ng-click="watchThis(photo)">
+					<div class="photoArea">
+						<img class="photoImg" ng-src="{{ photo.thumbnailUrl }}" />
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-4" ng-repeat="photo in album.photos" ng-if="$index >= min + 9 && $index < max">
+				<div class="polaroid" ng-click="watchThis(photo)">
+					<div class="photoArea">
+						<img class="photoImg" ng-src="{{ photo.thumbnailUrl }}" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<button class="photoButton" ng-click="prevPage()" ng-if="currentPage > 0">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</button>
+		<button class="photoButton buttonText" ng-click="thisPage($index)" ng-class="page.buttonClass" ng-repeat="page in pages">{{ page.name }}</button>
+		<button class="photoButton" ng-click="nextPage()" ng-if="currentPage < pages.length - 1">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</button>
+	</div>
+
+	<button class="backButton buttonText" ng-click="back()"><span class="glyphicon glyphicon-chevron-left"></span> Back</button>
+</div>

@@ -1,0 +1,119 @@
+.textArea {
+	text-align: center;
+	width: 90%;
+	margin: 0 5%;
+}
+
+.text {
+	font-family: 'Bad Script';
+	font-weight: bold;
+}
+
+.header {
+	padding: 5%;
+}
+
+.footer {
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 2.5%;
+}
+
+.buttonText {
+	font-family: 'Bad Script';
+	font-weight: bold;
+}
+
+.polaroid {
+	background-color: white;
+	margin: 10%;
+	width: 80%;
+	border: 1px solid white;
+	box-shadow: 6px 6px 20px black, 10px -10px 25px grey;
+}
+
+.photoArea {
+	margin: 10%;
+	width: 80%;
+	overflow: hidden;
+}
+
+.photoImg {
+	width: 100%;
+	height: auto;
+}
+
+.albumRow::after {
+	clear: both;
+}
+
+.albumColLeft {
+	width: 50%;
+	float: left;
+}
+
+.albumColRight {
+	width: 50%;
+	float: right;
+}
+
+.albumTitle {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 3.6em;
+	line-height: 1.8em;
+}
+
+.photoButton {
+	background-color: white;
+	border-radius: 50%;
+	border: none;
+	box-shadow: 2px 2px 15px black, 7.5px -7.5px 20px grey;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+}
+
+.photoButton:active, .photoButton:hover, .active {
+	color: white;
+	background-color: grey;
+}
+
+.backButton {
+	background: none;
+	border: none;
+	float: left;
+	padding: 2.5%;
+}
+
+#photoDetail {
+	position: fixed;
+	z-index: 9;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(51, 51, 51, 0.9);
+}
+
+.detailText {
+	margin-top: 10%;
+	color: white;
+}
+
+.blur {
+	filter: blur(5px);
+}
+
+.closeButton {
+	background: none;
+	border: none;
+	color: white;
+	float: right;
+	padding: 5%;
+}
+
+.detailRow::before {
+	clear: both;
+	margin-top: 5%;
+}

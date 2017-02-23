@@ -1,0 +1,127 @@
+<div class="header textArea">
+	<h1 class="text">Albums</h1>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4" ng-repeat="album in albums" ng-if="$index >= min && $index < max - 9">
+			<div class="polaroid" ng-click="toAlbum(album)">
+				<div class="photoArea">
+					<div class="albumRow">
+						<div class="albumColLeft">
+							<img class="photoImg" ng-src="{{getPhoto(album.id, 0)}}" onerror="this.style.display='none'" />
+						</div>
+						<div class="albumColRight">
+							<img class="photoImg" ng-src="{{getPhoto(album.id, 1)}}" onerror="this.style.display='none'" />
+						</div>
+					</div>
+					<div class="albumRow">
+						<div class="albumColLeft">
+							<img class="photoImg" ng-src="{{getPhoto(album.id, 2)}}" onerror="this.style.display='none'" />
+						</div>
+						<div class="albumColRight">
+							<img class="photoImg" ng-src="{{getPhoto(album.id, 3)}}" onerror="this.style.display='none'" />
+						</div>
+					</div>
+				</div>
+				<div class="textArea">
+					<h4 class="text albumTitle">{{ album.title }}</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-4" ng-repeat="album in albums" ng-if="$index >= min + 3 && $index < max - 6">
+			<div class="polaroid" ng-click="toAlbum(album)">
+				<div class="photoArea">
+					<div class="albumRow">
+						<div class="albumColLeft">
+							<img class="photoImg" ng-src="{{getPhoto(album.id, 0)}}" onerror="this.style.display='none'" />
+						</div>
+						<div class="albumColRight">
+							<img class="photoImg" ng-src="{{getPhoto(album.id, 1)}}" onerror="this.style.display='none'" />
+						</div>
+					</div>
+					<div class="albumRow">
+						<div class="albumColLeft">
+							<img class="photoImg" ng-src="{{getPhoto(album.id, 2)}}" onerror="this.style.display='none'" />
+						</div>
+						<div class="albumColRight">
+							<img class="photoImg" ng-src="{{getPhoto(album.id, 3)}}" onerror="this.style.display='none'" />
+						</div>
+					</div>
+				</div>
+				<div class="textArea">
+					<h4 class="text albumTitle">Album {{ album.title }}</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-4" ng-repeat="album in albums" ng-if="$index >= min + 6 && $index < max - 3">
+			<div class="polaroid" ng-click="toAlbum(album)">
+				<div class="photoArea">
+					<div class="albumRow">
+						<div class="albumColLeft">
+							<img class="photoImg" ng-src="{{getPhoto(album.id, 0)}}" onerror="this.style.display='none'" />
+						</div>
+						<div class="albumColRight">
+							<img class="photoImg" ng-src="{{getPhoto(album.id, 1)}}" onerror="this.style.display='none'" />
+						</div>
+					</div>
+					<div class="albumRow">
+						<div class="albumColLeft">
+							<img class="photoImg" ng-src="{{getPhoto(album.id, 2)}}" onerror="this.style.display='none'" />
+						</div>
+						<div class="albumColRight">
+							<img class="photoImg" ng-src="{{getPhoto(album.id, 3)}}" onerror="this.style.display='none'" />
+						</div>
+					</div>
+				</div>
+				<div class="textArea">
+					<h4 class="text albumTitle">Album {{ album.title }}</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-4" ng-repeat="album in albums" ng-if="$index >= min + 9 && $index < max">
+			<div class="polaroid" ng-click="toAlbum(album)">
+				<div class="photoArea">
+					<div class="albumRow">
+						<div class="albumColLeft">
+							<img class="photoImg" ng-src="{{getPhoto(album.id, 0)}}" onerror="this.style.display='none'" />
+						</div>
+						<div class="albumColRight">
+							<img class="photoImg" ng-src="{{getPhoto(album.id, 1)}}" onerror="this.style.display='none'" />
+						</div>
+					</div>
+					<div class="albumRow">
+						<div class="albumColLeft">
+							<img class="photoImg" ng-src="{{getPhoto(album.id, 2)}}" onerror="this.style.display='none'" />
+						</div>
+						<div class="albumColRight">
+							<img class="photoImg" ng-src="{{getPhoto(album.id, 3)}}" onerror="this.style.display='none'" />
+						</div>
+					</div>
+				</div>
+				<div class="textArea">
+					<h4 class="text albumTitle">Album {{ album.title }}</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+	<button class="photoButton" ng-click="prevPage()" ng-if="currentPage > 0">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</button>
+	<button class="photoButton buttonText" ng-click="thisPage($index)" ng-class="page.buttonClass" ng-repeat="page in pages">{{ page.name }}</button>
+	<button class="photoButton" ng-click="nextPage()" ng-if="currentPage < pages.length - 1">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	</button>
+</div>
